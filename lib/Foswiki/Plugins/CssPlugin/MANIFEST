@@ -1,0 +1,9 @@
+# Release manifest for CssPlugin
+data/System/CssPlugin.txt 0644 Documentation
+lib/Foswiki/Plugins/CssPlugin.pm 0644 Perl module
+
+#
+# Extra configure settings
+#
+lib/Foswiki/Plugins/CssPlugin/Config.spec
+

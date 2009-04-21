@@ -1,0 +1,41 @@
+---+!! !CssPlugin
+<!--
+One line description, required for extensions repository catalog.
+   * Set SHORTDESCRIPTION = Abstracts CSS class names
+   * Set CONFIGURE = [[%SCRIPTURL{"configure"}%#CssPluginlink][configure]]
+-->
+%SHORTDESCRIPTION%
+
+%TOC%
+
+---++ Usage
+
+<verbatim>%CSS{"css-abstract-class"}%</verbatim>
+
+---++ CSS abstract classes
+
+Install that plugin and take a look %CONFIGURE% for the full list of supportd CSS abstract classes.
+
+---++ Examples
+
+<verbatim>%CSS{"odd"}%</verbatim>
+
+---++ Installation Instructions
+
+%$INSTALL_INSTRUCTIONS%
+
+---++ Info
+
+Many thanks to the following sponsors for supporting this work:
+   * Acknowledge any sponsors here
+
+|  Author(s): | Foswiki:Main.StephaneLenclud |
+|  Copyright: | &copy; |
+|  License: | [[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]] |
+|  Version: | %$VERSION% |
+|  Change History: | <!-- versions below in reverse order -->&nbsp; |
+|  Dependencies: | %$DEPENDENCIES% |
+|  Home page: | http://foswiki.org/bin/view/Extensions/CssPlugin |
+|  Support: | http://foswiki.org/bin/view/Support/CssPlugin |
+
+<!-- Do _not_ attempt to edit this topic; it is auto-generated. -->
