@@ -94,7 +94,7 @@ $Foswiki::cfg{Plugins}{CssPlugin}{'error-text'} = 'ui-state-error-text';
 
 # **STRING**
 # Class name for error display control.
-$Foswiki::cfg{Plugins}{CssPlugin}{'error'} = 'ui-state-error';
+$Foswiki::cfg{Plugins}{CssPlugin}{'error'} = 'fw-error ui-widget ui-state-error ui-corner-all';
 
 # **STRING**
 # Class name for primary priority control.
