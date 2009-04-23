@@ -14,7 +14,7 @@ One line description, required for extensions repository catalog.
 
 ---++ CSS abstract classes
 
-Install that plugin and take a look %CONFIGURE% for the full list of supportd CSS abstract classes.
+Install that plugin and take a look %CONFIGURE% for the full list of supported CSS abstract classes.
 
 ---++ Examples
 
@@ -25,9 +25,6 @@ Install that plugin and take a look %CONFIGURE% for the full list of supportd CS
 %$INSTALL_INSTRUCTIONS%
 
 ---++ Info
-
-Many thanks to the following sponsors for supporting this work:
-   * Acknowledge any sponsors here
 
 |  Author(s): | Foswiki:Main.StephaneLenclud |
 |  Copyright: | &copy; |
