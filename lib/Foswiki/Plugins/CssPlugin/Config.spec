@@ -42,7 +42,7 @@ $Foswiki::cfg{Plugins}{CssPlugin}{'caption'} = 'fw-caption ui-widget-header';
 
 # **STRING**
 # Class name for table row. Think tr element.
-$Foswiki::cfg{Plugins}{CssPlugin}{'tr'} = 'fw-tr';
+$Foswiki::cfg{Plugins}{CssPlugin}{'tr'} = 'fw-tr ui-widget-content';
 
 # **STRING**
 # Class name for table header cell. Think th element.
@@ -50,7 +50,7 @@ $Foswiki::cfg{Plugins}{CssPlugin}{'th'} = 'fw-th ui-widget-header';
 
 # **STRING**
 # Class name for table data cell. Think td element.
-$Foswiki::cfg{Plugins}{CssPlugin}{'td'} = 'fw-td ui-widget-content';
+$Foswiki::cfg{Plugins}{CssPlugin}{'td'} = 'fw-td';
 
 # **STRING**
 # Class name for table header group. Think thead element.
@@ -66,7 +66,11 @@ $Foswiki::cfg{Plugins}{CssPlugin}{'tfoot'} = 'fw-tfoot';
 
 # **STRING**
 # Class name for odd table row or any odd stuff.
-$Foswiki::cfg{Plugins}{CssPlugin}{'odd'} = 'fw-odd';
+$Foswiki::cfg{Plugins}{CssPlugin}{'odd'} = 'fw-odd ui-widget-content ui-state-default';
+
+# **STRING**
+# Class name for even table row.
+$Foswiki::cfg{Plugins}{CssPlugin}{'even'} = 'fw-even ui-widget-content ui-state-hover';
 
 # **STRING**
 # Class name for text area.
