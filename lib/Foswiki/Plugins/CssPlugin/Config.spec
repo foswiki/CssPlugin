@@ -73,6 +73,10 @@ $Foswiki::cfg{Plugins}{CssPlugin}{'odd'} = 'fw-odd ui-widget-content ui-state-de
 $Foswiki::cfg{Plugins}{CssPlugin}{'even'} = 'fw-even ui-widget-content ui-state-hover';
 
 # **STRING**
+# Class name for sorted items. Think sorted column in tables.
+$Foswiki::cfg{Plugins}{CssPlugin}{'sorted'} = 'ui-state-highlight';
+
+# **STRING**
 # Class name for text area.
 $Foswiki::cfg{Plugins}{CssPlugin}{'text-area'} = 'fw-input ui-widget-content';
 
@@ -103,6 +107,7 @@ $Foswiki::cfg{Plugins}{CssPlugin}{'error'} = 'fw-error ui-widget ui-state-error 
 # **STRING**
 # Class name for primary priority control.
 $Foswiki::cfg{Plugins}{CssPlugin}{'primary'} = 'ui-priority-primary';
+
 
 
 
