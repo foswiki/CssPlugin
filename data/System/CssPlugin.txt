@@ -2,7 +2,6 @@
 <!--
 One line description, required for extensions repository catalog.
    * Set SHORTDESCRIPTION = Abstracts CSS class names
-   * Set CONFIGURE = [[%SCRIPTURL{"configure"}%#CssPluginlink][configure]]
 -->
 %SHORTDESCRIPTION%
 
@@ -14,7 +13,7 @@ One line description, required for extensions repository catalog.
 
 ---++ CSS abstract classes
 
-Install that plugin and take a look %CONFIGURE% for the full list of supported CSS abstract classes.
+Install that plugin and take a look =class.tmpl= for the full list of supported CSS abstract classes.
 
 ---++ Examples
 
@@ -27,10 +26,12 @@ Install that plugin and take a look %CONFIGURE% for the full list of supported C
 ---++ Info
 
 |  Author(s): | Foswiki:Main.StephaneLenclud |
-|  Copyright: | &copy; |
+|  Copyright: | &copy; 2009 Stéphane Lenclud |
 |  License: | [[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]] |
 |  Version: | %$VERSION% |
 |  Change History: | <!-- versions below in reverse order -->&nbsp; |
+|^| v0.2 Logical classes mapping now using skin tamplate =class.tmpl= instead of configuration.  |
+|^| v0.1 Logical classes mapping using configuration. |
 |  Dependencies: | %$DEPENDENCIES% |
 |  Home page: | http://foswiki.org/bin/view/Extensions/CssPlugin |
 |  Support: | http://foswiki.org/bin/view/Support/CssPlugin |
