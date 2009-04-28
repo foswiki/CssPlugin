@@ -51,7 +51,7 @@ our $VERSION = '$Rev: 3193 $';
 # This is a free-form string you can use to "name" your own plugin version.
 # It is *not* used by the build automation tools, but is reported as part
 # of the version number in PLUGINDESCRIPTIONS.
-our $RELEASE = '$v0.1$';
+our $RELEASE = '$v0.3$';
 
 # Short description of this plugin
 # One line description, is shown in the %SYSTEMWEB%.TextFormattingRules topic:
@@ -129,6 +129,9 @@ sub initPlugin {
     # using the provided alias
     #Foswiki::Func::registerRESTHandler( 'example', \&restExample );
 
+	#Reset our hash for mod_perl compatibility
+	%classMap=();
+
 	loadLogicalClasses();
 	
     # Plugin correctly initialized
@@ -140,7 +143,7 @@ sub initPlugin {
 #
 sub loadLogicalClasses()
 	{
-	Foswiki::Func::loadTemplate('class'); #Load the template file first
+	Foswiki::Func::readTemplate('class'); #Load the template file first
 	
 	#Do we need to load them all at once or just on demand... performance consideration...  just do it for now
 	%classMap=(

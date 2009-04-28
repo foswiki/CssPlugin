@@ -23,6 +23,8 @@ Install that plugin and take a look =class.tmpl= for the full list of supported 
 
 %$INSTALL_INSTRUCTIONS%
 
+For some reason on mod_perl you better put that plugin higher up in the execution order. 
+
 ---++ Info
 
 |  Author(s): | Foswiki:Main.StephaneLenclud |
@@ -30,6 +32,7 @@ Install that plugin and take a look =class.tmpl= for the full list of supported 
 |  License: | [[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]] |
 |  Version: | %$VERSION% |
 |  Change History: | <!-- versions below in reverse order -->&nbsp; |
+|^| v0.3 Minor mod_perl consolidation.  |
 |^| v0.2 Logical classes mapping now using skin template =class.tmpl= instead of configuration.  |
 |^| v0.1 Logical classes mapping using configuration. |
 |  Dependencies: | %$DEPENDENCIES% |
