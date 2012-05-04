@@ -32,7 +32,6 @@ the text had been included from another topic.
 
 =cut
 
-
 package Foswiki::Plugins::CssPlugin;
 
 # Always use strict to enforce variable scoping
@@ -66,7 +65,6 @@ our $SHORTDESCRIPTION = 'Abstracts CSS class names';
 # can be defined in your %USERSWEB%.SitePreferences and overridden at the web
 # and topic level.
 our $NO_PREFS_IN_TOPIC = 1;
-
 
 our %classMap;
 
@@ -129,69 +127,91 @@ sub initPlugin {
     # using the provided alias
     #Foswiki::Func::registerRESTHandler( 'example', \&restExample );
 
-	#Reset our hash for mod_perl compatibility
-	%classMap=();
+    #Reset our hash for mod_perl compatibility
+    %classMap = ();
 
-	loadLogicalClasses();
-	
+    loadLogicalClasses();
+
     # Plugin correctly initialized
     return 1;
 }
 
-
-	
 #
-sub loadLogicalClasses()
-	{
-	Foswiki::Func::readTemplate('class'); #Load the template file first
-	
-	#Do we need to load them all at once or just on demand... performance consideration...  just do it for now
-	%classMap=(
-		'body',Foswiki::Func::expandTemplate('css-class-body'),
-		'header',Foswiki::Func::expandTemplate('css-class-header'),
-		'footer',Foswiki::Func::expandTemplate('css-class-footer'),
-		'button',Foswiki::Func::expandTemplate('css-class-button'),
-		'button-cancel',Foswiki::Func::expandTemplate('css-class-button-cancel'),
-		'button-primary',Foswiki::Func::expandTemplate('css-class-button-primary'),
-		'button-secondary',Foswiki::Func::expandTemplate('css-class-button-secondary'),
-		'data-form',Foswiki::Func::expandTemplate('css-class-data-form'),
-		'table',Foswiki::Func::expandTemplate('css-class-table'),
-		'caption',Foswiki::Func::expandTemplate('css-class-caption'),
-		'tr',Foswiki::Func::expandTemplate('css-class-tr'),
-		'th',Foswiki::Func::expandTemplate('css-class-th'),
-		'td',Foswiki::Func::expandTemplate('css-class-td'),
-		'thead',Foswiki::Func::expandTemplate('css-class-thead'),
-		'tbody',Foswiki::Func::expandTemplate('css-class-tbody'),
-		'tfoot',Foswiki::Func::expandTemplate('css-class-tfoot'),
-		'odd',Foswiki::Func::expandTemplate('css-class-odd'),
-		'even',Foswiki::Func::expandTemplate('css-class-even'),
-		'sorted',Foswiki::Func::expandTemplate('css-class-sorted'),
-		'text-area',Foswiki::Func::expandTemplate('css-class-text-area'),
-		'text-input',Foswiki::Func::expandTemplate('css-class-text-input'),
-		'disabled',Foswiki::Func::expandTemplate('css-class-disabled'),
-		'clear',Foswiki::Func::expandTemplate('css-class-clear'),
-		'ckeckbox',Foswiki::Func::expandTemplate('css-class-ckeckbox'),
-		'error-text',Foswiki::Func::expandTemplate('css-class-error-text'),
-		'error',Foswiki::Func::expandTemplate('css-class-error'),
-		'primary',Foswiki::Func::expandTemplate('css-class-primary'),
-		);	
-	}
+sub loadLogicalClasses() {
+    Foswiki::Func::readTemplate('class');    #Load the template file first
 
+#Do we need to load them all at once or just on demand... performance consideration...  just do it for now
+    %classMap = (
+        'body',
+        Foswiki::Func::expandTemplate('css-class-body'),
+        'header',
+        Foswiki::Func::expandTemplate('css-class-header'),
+        'footer',
+        Foswiki::Func::expandTemplate('css-class-footer'),
+        'button',
+        Foswiki::Func::expandTemplate('css-class-button'),
+        'button-cancel',
+        Foswiki::Func::expandTemplate('css-class-button-cancel'),
+        'button-primary',
+        Foswiki::Func::expandTemplate('css-class-button-primary'),
+        'button-secondary',
+        Foswiki::Func::expandTemplate('css-class-button-secondary'),
+        'data-form',
+        Foswiki::Func::expandTemplate('css-class-data-form'),
+        'table',
+        Foswiki::Func::expandTemplate('css-class-table'),
+        'caption',
+        Foswiki::Func::expandTemplate('css-class-caption'),
+        'tr',
+        Foswiki::Func::expandTemplate('css-class-tr'),
+        'th',
+        Foswiki::Func::expandTemplate('css-class-th'),
+        'td',
+        Foswiki::Func::expandTemplate('css-class-td'),
+        'thead',
+        Foswiki::Func::expandTemplate('css-class-thead'),
+        'tbody',
+        Foswiki::Func::expandTemplate('css-class-tbody'),
+        'tfoot',
+        Foswiki::Func::expandTemplate('css-class-tfoot'),
+        'odd',
+        Foswiki::Func::expandTemplate('css-class-odd'),
+        'even',
+        Foswiki::Func::expandTemplate('css-class-even'),
+        'sorted',
+        Foswiki::Func::expandTemplate('css-class-sorted'),
+        'text-area',
+        Foswiki::Func::expandTemplate('css-class-text-area'),
+        'text-input',
+        Foswiki::Func::expandTemplate('css-class-text-input'),
+        'disabled',
+        Foswiki::Func::expandTemplate('css-class-disabled'),
+        'clear',
+        Foswiki::Func::expandTemplate('css-class-clear'),
+        'ckeckbox',
+        Foswiki::Func::expandTemplate('css-class-ckeckbox'),
+        'error-text',
+        Foswiki::Func::expandTemplate('css-class-error-text'),
+        'error',
+        Foswiki::Func::expandTemplate('css-class-error'),
+        'primary',
+        Foswiki::Func::expandTemplate('css-class-primary'),
+    );
+}
 
 #
-sub class 	
-	{
-	my($logicalClass) = @_;
-	return '' unless defined $logicalClass;
-	return '' unless defined $classMap{$logicalClass};
-	return $classMap{$logicalClass};
-	}
-
+sub class {
+    my ($logicalClass) = @_;
+    return '' unless defined $logicalClass;
+    return '' unless defined $classMap{$logicalClass};
+    return $classMap{$logicalClass};
+}
 
 # The function used to handle the %EXAMPLETAG{...}% macro
 # You would have one of these for each macro you want to process.
 sub _CSS {
-    my($session, $params, $theTopic, $theWeb) = @_;
+    my ( $session, $params, $theTopic, $theWeb ) = @_;
+
     # $session  - a reference to the Foswiki session object (if you don't know
     #             what this is, just ignore it)
     # $params=  - a reference to a Foswiki::Attrs object containing
@@ -207,15 +227,15 @@ sub _CSS {
     # For example, %EXAMPLETAG{'hamburger' sideorder="onions"}%
     # $params->{_DEFAULT} will be 'hamburger'
     # $params->{sideorder} will be 'onions'
-	
-	#SL: Be permisive for now, just return empty value if something goes wrong.	
-	return '' unless defined $params->{_DEFAULT};
-	return '' unless defined $classMap{$params->{_DEFAULT}};
-	return $classMap{$params->{_DEFAULT}};
-	
-	#return '' unless defined $params->{_DEFAULT};
-	#return '' unless defined $Foswiki::cfg{Plugins}{CssPlugin}{$params->{_DEFAULT}};	
-	#return $Foswiki::cfg{Plugins}{CssPlugin}{$params->{_DEFAULT}};	
+
+    #SL: Be permisive for now, just return empty value if something goes wrong.
+    return '' unless defined $params->{_DEFAULT};
+    return '' unless defined $classMap{ $params->{_DEFAULT} };
+    return $classMap{ $params->{_DEFAULT} };
+
+#return '' unless defined $params->{_DEFAULT};
+#return '' unless defined $Foswiki::cfg{Plugins}{CssPlugin}{$params->{_DEFAULT}};
+#return $Foswiki::cfg{Plugins}{CssPlugin}{$params->{_DEFAULT}};
 }
 
 =begin TML
